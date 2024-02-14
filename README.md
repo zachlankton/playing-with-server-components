@@ -1,19 +1,5 @@
-# REPRO: MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added to
+### Playing with "Server Components"
 
-This code is a reproduction of the above error.
+Currently just playing with which frameworks can read a file in a "server component"
 
-```bash
-zach@zach-ubuntu-office:~/RSC/nextjs$ npm start
-
-> nextjs@0.1.0 start
-> next start
-
-   ▲ Next.js 14.1.0
-   - Local:        http://localhost:3000
-
- ✓ Ready in 226ms
-^C^C^C^C^C^C^C^C^C^C^C(node:2035457) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added to [Server]. Use emitter.setMaxListeners() to increase limit
-(Use `node --trace-warnings ...` to show where the warning was created)
-^C^C^C
-
-```
+Inspired by this tweet from Dan Abramov: https://x.com/dan_abramov2/status/1755941213947957636?s=20
