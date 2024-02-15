@@ -1,30 +1,23 @@
 // @refresh reload
-import { createSignal } from "solid-js";
-import * as fs from "fs";
+import { MetaProvider, Title } from "@solidjs/meta";
+import { Router } from "@solidjs/router";
+import { FileRoutes } from "@solidjs/start";
+import { Suspense } from "solid-js";
 import "./app.css";
-import { isServer } from "solid-js/web";
 
 export default function App() {
-  let val = "Default value";
-  const [count, setCount] = createSignal(0);
-  if (isServer) {
-    val = fs.readFileSync("/tmp/test.txt", "utf8");
-  }
-
   return (
-    <main>
-      <h1>Hello world!</h1>
-      <p>{val}</p>
-      <button class="increment" onClick={() => setCount(count() + 1)}>
-        Clicks: {count()}
-      </button>
-      <p>
-        Visit{" "}
-        <a href="https://start.solidjs.com" target="_blank">
-          start.solidjs.com
-        </a>{" "}
-        to learn how to build SolidStart apps.
-      </p>
-    </main>
+    <Router
+      root={(props) => (
+        <MetaProvider>
+          <Title>SolidStart - Basic</Title>
+          <a href="/">Index</a>
+          <a href="/about">About</a>
+          <Suspense>{props.children}</Suspense>
+        </MetaProvider>
+      )}
+    >
+      <FileRoutes />
+    </Router>
   );
 }
