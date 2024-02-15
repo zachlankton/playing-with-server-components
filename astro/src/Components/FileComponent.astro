@@ -1,0 +1,7 @@
+---
+import * as fs from "fs";
+const { filePath } = Astro.props;
+const val = fs.readFileSync(filePath, "utf-8");
+---
+
+<pre>{val}</pre>
