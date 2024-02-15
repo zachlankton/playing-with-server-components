@@ -1,4 +1,4 @@
-```
+```bash
 echo "Astro Home Text File" > /tmp/astroHome.txt
 echo "Astro About Text File" > /tmp/astroAbout.txt
 npm install
