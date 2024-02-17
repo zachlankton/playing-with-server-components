@@ -2,6 +2,7 @@
 import * as fs from "fs";
 const { filePath } = Astro.props;
 const val = fs.readFileSync(filePath, "utf-8");
+console.log("FileComponent", filePath);
 ---
 
 <pre>{val}</pre>
