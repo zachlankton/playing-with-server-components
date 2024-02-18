@@ -7,7 +7,7 @@ if (typeof window === "object") {
   initialValue = document.getElementById("fileContents")?.textContent || "";
 }
 
-export function Counter({ path }: { path: string }) {
+export function FileCounter({ path }: { path: string }) {
   console.log("CounterComponent Function Running", path);
 
   if (typeof window === "undefined") {
