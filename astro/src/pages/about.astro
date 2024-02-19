@@ -1,11 +1,13 @@
 ---
 import Layout from "../Components/Layout.astro";
 import FileComponent from "../Components/FileComponent.astro";
+import FileCounter from "../Components/FileCounter.astro";
 console.log("About Page");
 ---
 
 <Layout>
   <h1>Astro Test</h1>
   <FileComponent filePath="/tmp/astroAbout.txt" />
+  <FileCounter filePath="/tmp/astroHome.txt" />
   <a href="/">Goto Home</a>
 </Layout>

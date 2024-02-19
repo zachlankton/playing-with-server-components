@@ -1,11 +1,14 @@
 ---
 import Layout from "../Components/Layout.astro";
 import FileComponent from "../Components/FileComponent.astro";
+import { Toggle } from "../Components/Toggle";
 console.log("Index Page");
 ---
 
 <Layout>
   <h1>Astro Test</h1>
-  <FileComponent filePath="/tmp/astroHome.txt" />
+  <Toggle client:load>
+    <FileComponent filePath="/tmp/astroHome.txt" />
+  </Toggle>
   <a href="/about">Goto About</a>
 </Layout>

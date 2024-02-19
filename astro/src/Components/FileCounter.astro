@@ -1,0 +1,11 @@
+---
+import * as fs from "fs";
+const { filePath } = Astro.props;
+const val = await fs.promises.readFile(filePath, "utf8");
+const txtNumber = await fs.promises.readFile("/tmp/astroCount.txt", "utf8");
+console.log("FileComponent", filePath);
+import { Counter } from "./Counter";
+---
+
+<Counter client:load count={Number(txtNumber)} />
+<pre>{val}</pre>
