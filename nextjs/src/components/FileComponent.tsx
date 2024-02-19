@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import { Counter } from "./Counter";
 import { Suspense } from "react";
+import { getFile } from "@/app/getData/getFile";
 console.log("FileComponent Module Running");
 
 export function delay(ms: number) {
@@ -8,14 +9,13 @@ export function delay(ms: number) {
 }
 
 export async function FileComponent(props: any) {
-  await delay(2000);
   console.log("FileComponent Function Running", props.path);
-  const val = await fs.promises.readFile(props.path, "utf8");
-  const txtCount = await fs.promises.readFile("/tmp/nextCount.txt", "utf8");
+  const val = await getFile(props.path);
+  // const txtCount = await getFile("/tmp/nextCount.txt");
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <pre>{val}</pre>
-      <Counter count={Number(txtCount)} />
+      {/* <Counter count={Number(txtCount)} /> */}
       {props.children}
     </Suspense>
   );

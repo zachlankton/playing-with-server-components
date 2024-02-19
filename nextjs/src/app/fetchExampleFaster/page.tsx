@@ -18,7 +18,6 @@ export default function Home() {
       </Toggle>
       <Link href="/">Go Home</Link>
       <Link href="/about">Go About</Link>
-      <Link href="/fetchExampleBug">Goto Fetch Example (BUG)</Link>
     </main>
   );
 }

@@ -1,9 +1,8 @@
-import { delay } from "@/components/FileComponent";
-import * as fs from "fs";
+import { getFile } from "./getFile";
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  await delay(2000);
   const path = searchParams.get("path") || "";
-  const txt = await fs.promises.readFile(path, "utf8");
+  const txt = await getFile(path);
   return Response.json({ txt });
 }
