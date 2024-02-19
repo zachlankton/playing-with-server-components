@@ -12,6 +12,8 @@ export default function Home() {
       </Toggle>
       {/* <Counter path="/tmp/nextHome.txt" /> */}
       <Link href="/about">Goto About</Link>
+      <Link href="/fetchExampleBug">Goto Fetch Example (BUG)</Link>
+      <Link href="/fetchExampleFaster">Goto Fetch Example</Link>
     </main>
   );
 }
