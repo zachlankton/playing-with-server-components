@@ -1,5 +1,8 @@
-import { delay } from "@/components/FileComponent";
 import * as fs from "fs";
+
+function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 export async function getFile(path: string) {
   await delay(2000);
